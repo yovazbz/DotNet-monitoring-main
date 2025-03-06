@@ -54,7 +54,7 @@ pipeline {
             steps{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
-                       sh "make image"
+                       sh "make help"
                     }
                 }
             }
