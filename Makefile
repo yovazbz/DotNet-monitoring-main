@@ -18,8 +18,6 @@ TEST_DIR := tests
 .PHONY: help lint image push run deploy undeploy test test-report test-api clean .EXPORT_ALL_VARIABLES
 .DEFAULT_GOAL := help
 
-@echo "PHONY - PHONY"
-
 help: ## 💬 This help message
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
