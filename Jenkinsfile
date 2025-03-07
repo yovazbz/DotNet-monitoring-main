@@ -50,7 +50,7 @@ pipeline {
           }
         }
 
-        stage("Validate Make"){
+        stage("Version Make"){
           steps{
               sh "make --version"  
           }
