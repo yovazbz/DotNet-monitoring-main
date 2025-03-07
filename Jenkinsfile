@@ -44,17 +44,16 @@ pipeline {
             }
         }
 
-        stage("Validate Make"){
-          steps{
-              sh "make"  
-          }
-        }
-
         stage("Version Make"){
           steps{
               sh "make --version"  
           }
-        }
+        }        
+        stage("Validate Make"){
+          steps{
+              sh "make"  
+          }
+        }       
 
         stage("Docker Build & tag"){
             steps{
