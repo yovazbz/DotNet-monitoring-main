@@ -46,6 +46,12 @@ pipeline {
 
         stage("Validate Make"){
           steps{
+              sh "make"  
+          }
+        }
+
+        stage("Validate Make"){
+          steps{
               sh "make --version"  
           }
         }
@@ -54,7 +60,7 @@ pipeline {
             steps{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){   
-                       sh "make help"
+                       sh "make image"
                     }
                 }
             }
