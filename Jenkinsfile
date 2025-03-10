@@ -50,7 +50,7 @@ pipeline {
           }
         }
 
-         stage("Version Make"){
+         stage("PATH"){
           steps{
               sh "pwd"  
           }
