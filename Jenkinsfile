@@ -48,7 +48,13 @@ pipeline {
           steps{
               sh "make --version"  
           }
-        }        
+        }
+
+         stage("Version Make"){
+          steps{
+              sh "pwd"  
+          }
+        }    
         stage("Validate Make"){
           steps{
               sh "make"  
