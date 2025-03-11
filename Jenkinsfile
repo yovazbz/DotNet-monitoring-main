@@ -56,7 +56,7 @@ pipeline
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image yovaz/dotnet-monitoring:latest > trivy.txt"
+                sh "trivy image yovazbz/dotnet-monitoring:latest > trivy.txt"
             }
         }
         stage("Docker Push"){
@@ -70,7 +70,7 @@ pipeline
         }
         stage("Deploy to container"){
             steps{
-                sh "docker run -d --name dotnet -p 5000:5000 yovaz/dotnet-monitoring:latest"
+                sh "docker run -d --name dotnet -p 5000:5000 yovazbz/dotnet-monitoring:latest"
             }
         }      
     }
