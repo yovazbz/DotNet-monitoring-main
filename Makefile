@@ -5,7 +5,7 @@ IMAGE_TAG ?= latest
 
 # Used by `deploy` target, sets Azure webap defaults, override as required
 AZURE_RES_GROUP ?= demoapps
-AZURE_REGION ?= northeurope
+AZURE_REGION ?= mexicocentral
 AZURE_APP_NAME ?= dotnet-demoapp
 
 # Used by `test-api` target
