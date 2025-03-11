@@ -36,7 +36,7 @@ WORKDIR /app
 COPY --from=build /build/src/bin/Release/net6.0/publish/ .
 
 # Expose port 5000 from Kestrel webserver
-#EXPOSE 5000
+EXPOSE 5000
 
 # Tell Kestrel to listen on port 5000 and serve plain HTTP
 #ENV ASPNETCORE_URLS http://*:5000
