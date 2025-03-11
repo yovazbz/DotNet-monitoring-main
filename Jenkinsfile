@@ -22,12 +22,12 @@ pipeline
         stage("Sonarqube Analysis "){
             steps{
                 withSonarQubeEnv('sonar-server') {
-                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Dotnet-Webapp \
+                    sh ''' $SCANNER_HOME/bin/sonar-scanner -Dsonar.projectName=Monitoring-Webapp \
                     -Dsonar.projectKey=Dotnet-Webapp '''
                 }
             }
         }
-        stage("quality gate"){
+        stage("Quality Gate"){
            steps {
                 script {
                     waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-token'
@@ -56,7 +56,7 @@ pipeline
         }
         stage("TRIVY"){
             steps{
-                sh "trivy image yovazbz/dotnet-monitoring:latest > trivy.txt"
+                sh "trivy image yovaz/dotnet-monitoring:latest > trivy.txt"
             }
         }
         stage("Docker Push"){
@@ -70,7 +70,7 @@ pipeline
         }
         stage("Deploy to container"){
             steps{
-                sh "docker run -d --name dotnet -p 5000:5000 yovazbz/dotnet-monitoring:latest"
+                sh "docker run -d --name dotnet -p 5000:5000 yovaz/dotnet-monitoring:latest"
             }
         }      
     }
