@@ -16,7 +16,7 @@ pipeline
         }
         stage('Checkout From Git'){
             steps{
-                git branch: 'main', url: 'https://github.com/yovazbz/DotNet-monitoring-main.git'
+                git branch: 'master', url: 'https://github.com/yovazbz/DotNet-monitoring-main.git'
             }
         }
         stage("Sonarqube Analysis "){
